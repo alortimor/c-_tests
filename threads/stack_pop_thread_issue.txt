@@ -1,0 +1,16 @@
+    
+
+           ThreadA              ThreadB
+        
+ Stack       
+  | |
+  | |      int v = st.top; //6
+  | |                           int v = st.top; //6
+  | |      st.pop();                            // 6 is now popped out of the stack
+  |6|                           st.pop();       // 8 is now popped out of the stack
+6 |8|                           process(v);     // v however is equal to 6, not 8, so process(v) processes 6
+8 |3|      process(v);                          // 8 is popped off the stack, but never processed
+  |9|
+
+So stack is NOT thread safe.
+   

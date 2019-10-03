@@ -1,0 +1,7 @@
+async_db_server
+sync_db_client
+exception*.log
+*.o
+*.xml
+*diag*
+

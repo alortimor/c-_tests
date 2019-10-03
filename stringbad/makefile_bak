@@ -1,0 +1,16 @@
+CC=g++
+CFLAGS=-c -Wall -std=gnu++11
+all: vegnews
+
+vegnews: stringbad.o vegnews.o
+	$(CC) vegnews.o stringbad.o -o vegnews
+
+
+stringbad.o:	stringbad.cpp
+	$(CC) $(CFLAGS) stringbad.cpp
+
+vegnews.o: vegnews.cpp
+	$(CC) $(CFLAGS) vegnews.cpp
+
+clean:
+	rm *o vegnews.o vegnews
